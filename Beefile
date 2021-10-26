@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+BEE_PROJECT="bee-unity"
+PLUGINS=(changelog version)
+
+# changelog => version
+CHANGELOG_PATH=CHANGELOG.md
+CHANGELOG_CHANGES=CHANGES.md
+CHANGELOG_URL="https://github.com/sschmid/${BEE_PROJECT}/blob/main/CHANGELOG.md"
+CHANGELOG_TAG_PREFIX=""
+CHANGELOG_TAG_SUFFIX=""
+
+# version
+VERSION_PATH=version.txt
+
+plugin::release() {
+  changelog::merge
+  git add .
+  local version="$(version::read)"
+  git commit -m "Release ${version}"
+  git push
+  git tag "${version}"
+  git push --tags
+}
