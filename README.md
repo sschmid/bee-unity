@@ -1,23 +1,28 @@
 # unity
-Useful commands for Unity development
+Useful functions for Unity development
 
-## `unity::batchmode [<batchmode-arguments>]`
-Open project in batchmode and quit
+https://github.com/sschmid/bee-unity
 
-## `unity::execute_method [<batchmode-arguments>]`
-Open Unity in batchmode, execute the specified method and quit
-
-### Example
-```sh
-bee unity::execute_method Build
 ```
+template:
 
-## `unity::sync_solution [<batchmode-arguments>]`
-Open Unity in batchmode, sync C# project and quit
+  UNITY_PROJECT_PATH=. # default
+  UNITY="/Applications/Unity/Hub/Editor/2021.2.7f1/Unity.app/Contents/MacOS/Unity"
 
-----------------------------------------
+secrets:
 
-## Dependencies
+  UNITY_SERIAL
+  UNITY_USER
+  UNITY_PASSWORD
 
-### 3rd party
-- `Unity` - https://unity3d.com
+usage:
+
+  batchmode [<batchmode-arguments>]        open Unity in batchmode and quit
+  execute_method [<batchmode-arguments>]   open Unity in batchmode, execute the specified method and quit
+                                           e.g. bee unity execute_method Build
+  sync_solution [<batchmode-arguments>]    open Unity in batchmode, sync C# project and quit
+
+requirements:
+
+  Unity   https://unity3d.com
+```

@@ -2,8 +2,6 @@
 
 unity::help() {
   cat << 'EOF'
-Useful commands for Unity development - https://github.com/sschmid/bee-unity
-
 template:
 
   UNITY_PROJECT_PATH=. # default
@@ -22,11 +20,7 @@ usage:
                                            e.g. bee unity execute_method Build
   sync_solution [<batchmode-arguments>]    open Unity in batchmode, sync C# project and quit
 
-bee dependencies:
-
-  none
-
-dependencies:
+requirements:
 
   Unity   https://unity3d.com
 
